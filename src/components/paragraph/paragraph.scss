@@ -33,6 +33,7 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: stretch;
     &-no_solo{
       margin-left: 2.5rem;
     }

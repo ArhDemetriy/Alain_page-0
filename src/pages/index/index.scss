@@ -2,18 +2,30 @@ body{
   background-color: var(--second_color, red);
   color: var(--main_color, red);
 }
-.paragraph__img{
-  background-color: var(--main_color, red);
-  color: var(--second_color, red);
-  $size: 5rem;
-  width: $size;
-  height: $size;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.index{
+  &__initials {
+    background-color: var(--main_color, red);
+    color: var(--second_color, red);
+    $size: 5rem;
+    width: $size;
+    height: $size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  font-weight: 300;
-  font-size: 2rem;
-  line-height: 160.68%;
-  letter-spacing: 0.13em;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 160.68%;
+    letter-spacing: 0.13em;
+  }
+  &__img{
+    height: 74px;
+  }
+  &__text_block{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 60rem;
+    max-width: 59rem;
+  }
 }

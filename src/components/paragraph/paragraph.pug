@@ -18,18 +18,18 @@ append mixins
       const text = options.text ? `${options.text}` : ``;
       delete options.text;
     
-    if block
+    if block 
       div()&attributes(options)&attributes(attributes)
         block
-      if caption && text
-        div.paragraph__text_block.paragraph__text_block-no_solo
-          span.paragraph__caption!=caption
-          span.paragraph__text!=text
-      else
-        if caption
-          span.paragraph__caption.paragraph__text_block-no_solo!=caption
-        if text
-          span.paragraph__text.paragraph__text_block-no_solo!=text
+        if caption && text
+          div.paragraph__text_block.paragraph__text_block-no_solo
+            span.paragraph__caption!=caption
+            span.paragraph__text!=text
+        else
+          if caption
+            span.paragraph__caption.paragraph__text_block-no_solo!=caption
+          if text
+            span.paragraph__text.paragraph__text_block-no_solo!=text
     else
       div.paragraph__text_block()&attributes(options)&attributes(attributes)
         if caption

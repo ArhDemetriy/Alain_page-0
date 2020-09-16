@@ -5,22 +5,25 @@ append styles
   link(rel='stylesheet', href='index.scss')
 
 append header
-block paragraph
-  paragraph='Alain page 0'
+block title
+  title='Alain page 0'
 append main
   +paragraph({
+      mod: 'slim',
       text:'Сайт Алёны Агеевой об&nbsp;изучении digital-дизайна'
     })
-    .paragraph__img='АГ'
-  +paragraph({
-      mod: 'huge',
-      caption: 'Мой новый эксперимент:',
-      text:'Я изучаю веб-дизайн вместе с&nbsp;Wayup и&nbsp;Андреем'
-    })    
-  +paragraph({ 
-      mod: 'comment',
-      caption: '25 июля 2020 г.',
-      text:'Купила себе графический планшетдля качественного наполнения своих сайтов'
-    })
+    .index__initials='АГ'
+  .index__text_block
+    +paragraph({
+        mod: 'huge',
+        caption: 'Мой новый эксперимент:',
+        text:'Я изучаю веб-дизайн вместе с&nbsp;Wayup и&nbsp;Андреем'
+      })    
+    +paragraph({ 
+        mod: 'comment',
+        caption: '25 июля 2020 г.',
+        text:'Купила себе графический планшетдля качественного наполнения своих сайтов'
+      })
+      img.index__img(src='../../img/mini_img.jpg',alt='foto')
     
   
