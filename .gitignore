@@ -1,5 +1,4 @@
 alain_page-0.code-workspace
-src/pages/base/
 node_modules/
 package-lock.json
 dist/
