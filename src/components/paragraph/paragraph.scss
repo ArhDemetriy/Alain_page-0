@@ -1,24 +1,46 @@
 .paragraph{
-  font-family: Roboto;
-  font-size: 1.8rem;
-  line-height: 111.68%;
-  letter-spacing: 0.01em;
-  display : inline-flex;
-  align-items: center;   
-  &__texts{
+  display: flex;
+  align-items: center;
+  &-slim{
+    font-family: Roboto;
+    font-size: 1.8rem;
+    line-height: 111.68%;
+    letter-spacing: 0.01em;
     max-width: 23.8rem;
-    margin-left: 2.6rem;
-    display: flex;
-    flex-direction: column;
-    
+  }
+  &-huge{
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 160.68%;
+    letter-spacing: 0.015em;
+    & .paragraph__text {
+      font-weight: bold;
+      font-size: 4.4rem;
+      line-height: 129.18%;
+      letter-spacing: initial;
+    }
   }
   &-comment{
     font-family: 'Open Sans';
     font-size: 1.4rem;
     line-height: 129.18%;
-    letter-spacing: initial;
-    & .paragraph__text {   
+    & .paragraph__text {
       font-weight: 800;
     }
   }
+  &__text_block{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-no_solo{
+      margin-left: 2.5rem;
+    }
+  }
+  &__caption{
+
+  }
+  &__text{
+
+  } 
 }

@@ -17,17 +17,22 @@ append mixins
       delete options.caption;
       const text = options.text ? `${options.text}` : ``;
       delete options.text;
-
-      const comment = mod.entries('comment');
-      let blockToBe = false;
-
-    div()&attributes(attributes)&attributes(options)
-      if block
-        - blockToBe = true;
+    
+    if block
+      div()&attributes(options)&attributes(attributes)
         block
-      if caption || text
-        div.paragraph__texts
-          if caption
-            span.paragraph__caption!=caption
-          if text
-            span.paragraph__text!=text
+      if caption && text
+        div.paragraph__text_block.paragraph__text_block-no_solo
+          span.paragraph__caption!=caption
+          span.paragraph__text!=text
+      else
+        if caption
+          span.paragraph__caption.paragraph__text_block-no_solo!=caption
+        if text
+          span.paragraph__text.paragraph__text_block-no_solo!=text
+    else
+      div.paragraph__text_block()&attributes(options)&attributes(attributes)
+        if caption
+          span.paragraph__caption!=caption
+        if text
+          span.paragraph__text!=text
