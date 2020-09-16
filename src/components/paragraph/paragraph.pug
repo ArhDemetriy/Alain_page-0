@@ -1,0 +1,38 @@
+append styles
+  link(rel="stylesheet", href="../../components/paragraph/paragraph.scss")
+append skripts__asinc
+  //- script(defer src="../../components/paragraph/paragraph.js")
+
+append mixins
+  mixin paragraph(options = {})
+    -
+      options.class = options.class ? `paragraph ${options.class}` : `paragraph `;
+      const mod = options.mod ? options.mod.trim().split(/[,\s]\s*/) : [];
+      options.class += options.mod ? ` paragraph-${mod.join(` paragraph-`)} ` : '';
+      delete options.mod;
+      options.class += options.block_class ? ` ${options.block_class} ` : '';
+      const block_class = options.block_class ? `${options.block_class}` : `paragraph`;
+      delete options.block_class;
+      const caption = options.caption ? `${options.caption}` : ``;
+      delete options.caption;
+      const text = options.text ? `${options.text}` : ``;
+      delete options.text;
+    
+    if block
+      div()&attributes(options)&attributes(attributes)
+        block
+      if caption && text
+        div.paragraph__text_block.paragraph__text_block-no_solo
+          span.paragraph__caption!=caption
+          span.paragraph__text!=text
+      else
+        if caption
+          span.paragraph__caption.paragraph__text_block-no_solo!=caption
+        if text
+          span.paragraph__text.paragraph__text_block-no_solo!=text
+    else
+      div.paragraph__text_block()&attributes(options)&attributes(attributes)
+        if caption
+          span.paragraph__caption!=caption
+        if text
+          span.paragraph__text!=text
