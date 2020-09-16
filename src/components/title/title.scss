@@ -4,10 +4,19 @@
   line-height: 111.68%;
   letter-spacing: 0.01em;
   display : inline-flex;
-  align-items: center;
-   
+  align-items: center;   
   &__texts{
     max-width: 23.8rem;
     margin-left: 2.6rem;
+  }
+  &-comment{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 129.18%;
+    & > .title__texts {   
+      font-weight: 800;
+    }
   }
 }

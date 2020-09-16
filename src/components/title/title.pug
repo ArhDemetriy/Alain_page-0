@@ -18,6 +18,8 @@ append mixins
       const text = options.text ? `${options.text}` : ``;
       delete options.text;
 
+      const comment = mod.entries('comment');
+
     div()&attributes(attributes)&attributes(options)
       if block
         block
