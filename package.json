@@ -1,0 +1,23 @@
+{
+  "name": "alain_page-0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.pug",
+  "scripts": {
+    "dev": "parcel src/pages/index/index.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArhDemetriy/Alain_page-0.git"
+  },
+  "author": "Alain & ArhDemetriy",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ArhDemetriy/Alain_page-0/issues"
+  },
+  "homepage": "https://github.com/ArhDemetriy/Alain_page-0#readme",
+  "devDependencies": {
+    "pug": "^3.0.0",
+    "sass": "^1.26.10"
+  }
+}
