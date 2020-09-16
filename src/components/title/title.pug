@@ -1,0 +1,29 @@
+append styles
+  link(rel="stylesheet", href="../../components/title/title.scss")
+append skripts__asinc
+  //- script(defer src="../../components/title/title.js")
+
+append mixins
+  mixin title(options = {})
+    -
+      options.class = options.class ? `title ${options.class}` : `title `;
+      const mod = options.mod ? options.mod.trim().split(/[,\s]\s*/) : [];
+      options.class += options.mod ? ` title-${mod.join(` title-`)} ` : '';
+      delete options.mod;
+      options.class += options.block_class ? ` ${options.block_class} ` : '';
+      const block_class = options.block_class ? `${options.block_class}` : `title`;
+      delete options.block_class;
+      const caption = options.caption ? `${options.caption}` : ``;
+      delete options.caption;
+      const text = options.text ? `${options.text}` : ``;
+      delete options.text;
+
+    div()&attributes(attributes)&attributes(options)
+      if block
+        block
+      if caption || text
+        div.title__texts
+          if caption
+            span.title__caption!=caption
+          if text
+            span.title__text!=text
