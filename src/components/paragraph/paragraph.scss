@@ -1,4 +1,4 @@
-.title{
+.paragraph{
   font-family: Roboto;
   font-size: 1.8rem;
   line-height: 111.68%;
@@ -8,14 +8,16 @@
   &__texts{
     max-width: 23.8rem;
     margin-left: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    
   }
   &-comment{
     font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: normal;
     font-size: 1.4rem;
     line-height: 129.18%;
-    & > .title__texts {   
+    letter-spacing: initial;
+    & .paragraph__text {   
       font-weight: 800;
     }
   }

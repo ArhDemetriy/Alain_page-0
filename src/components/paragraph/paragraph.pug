@@ -1,17 +1,17 @@
 append styles
-  link(rel="stylesheet", href="../../components/title/title.scss")
+  link(rel="stylesheet", href="../../components/paragraph/paragraph.scss")
 append skripts__asinc
-  //- script(defer src="../../components/title/title.js")
+  //- script(defer src="../../components/paragraph/paragraph.js")
 
 append mixins
-  mixin title(options = {})
+  mixin paragraph(options = {})
     -
-      options.class = options.class ? `title ${options.class}` : `title `;
+      options.class = options.class ? `paragraph ${options.class}` : `paragraph `;
       const mod = options.mod ? options.mod.trim().split(/[,\s]\s*/) : [];
-      options.class += options.mod ? ` title-${mod.join(` title-`)} ` : '';
+      options.class += options.mod ? ` paragraph-${mod.join(` paragraph-`)} ` : '';
       delete options.mod;
       options.class += options.block_class ? ` ${options.block_class} ` : '';
-      const block_class = options.block_class ? `${options.block_class}` : `title`;
+      const block_class = options.block_class ? `${options.block_class}` : `paragraph`;
       delete options.block_class;
       const caption = options.caption ? `${options.caption}` : ``;
       delete options.caption;
@@ -19,13 +19,15 @@ append mixins
       delete options.text;
 
       const comment = mod.entries('comment');
+      let blockToBe = false;
 
     div()&attributes(attributes)&attributes(options)
       if block
+        - blockToBe = true;
         block
       if caption || text
-        div.title__texts
+        div.paragraph__texts
           if caption
-            span.title__caption!=caption
+            span.paragraph__caption!=caption
           if text
-            span.title__text!=text
+            span.paragraph__text!=text

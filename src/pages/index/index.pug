@@ -1,23 +1,23 @@
 extends ../base/base.pug
-include ../../components/title/title.pug
+include ../../components/paragraph/paragraph.pug
 
 append styles
   link(rel='stylesheet', href='index.scss')
 
 append header
-block title
-  title='Alain page 0'
+block paragraph
+  paragraph='Alain page 0'
 append main
-  +title({
+  +paragraph({
       text:'Сайт Алёны Агеевой об&nbsp;изучении digital-дизайна'
     })
-    .title__img='АГ'
-  +title({
+    .paragraph__img='АГ'
+  +paragraph({
       mod: 'huge',
       caption: 'Мой новый эксперимент:',
       text:'Я изучаю веб-дизайн вместе с&nbsp;Wayup и&nbsp;Андреем'
     })    
-  +title({ 
+  +paragraph({ 
       mod: 'comment',
       caption: '25 июля 2020 г.',
       text:'Купила себе графический планшетдля качественного наполнения своих сайтов'
