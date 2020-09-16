@@ -1,5 +1,5 @@
 extends ../base/base.pug
-//- include ../../../components/bullet_list/bullet_list.pug
+include ../../components/title/title.pug
 
 append styles
   link(rel='stylesheet', href='index.scss')
@@ -8,4 +8,7 @@ append header
 block title
   title='Alain page 0'
 append main
-
+  +title({
+    text:'Сайт Алёны Агеевой об&nbsp;изучении digital-дизайна'
+    })
+    .title__img='АГ'
